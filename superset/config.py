@@ -52,7 +52,7 @@ from sqlalchemy.orm.query import Query
 from superset.advanced_data_type.plugins.internet_address import internet_address
 from superset.advanced_data_type.plugins.internet_port import internet_port
 from superset.advanced_data_type.types import AdvancedDataType
-from superset.constants import CHANGE_ME_SECRET_KEY
+from superset.constants import SECRET_KEY
 from superset.jinja_context import BaseTemplateProcessor
 from superset.key_value.types import JsonKeyValueCodec
 from superset.stats_logger import DummyStatsLogger
@@ -186,7 +186,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 # or use `SUPERSET_SECRET_KEY` environment variable.
 # Use a strong complex alphanumeric string and use a tool to help you generate
 # a sufficiently random sequence, ex: openssl rand -base64 42"
-SECRET_KEY = os.environ.get("SUPERSET_SECRET_KEY") or CHANGE_ME_SECRET_KEY
+SECRET_KEY = os.environ.get("SUPERSET_SECRET_KEY") or SECRET_KEY
 
 # The SQLAlchemy connection string.
 SQLALCHEMY_DATABASE_URI = (
@@ -194,7 +194,7 @@ SQLALCHEMY_DATABASE_URI = (
 )
 
 # SQLALCHEMY_DATABASE_URI = 'mysql://myapp@localhost/myapp'
-# SQLALCHEMY_DATABASE_URI = 'postgresql://root:password@localhost/myapp'
+# SQLALCHEMY_DATABASE_URI = 'postgresql://debug:debug@localhost/superset'
 
 # The default MySQL isolation level is REPEATABLE READ whereas the default PostgreSQL
 # isolation level is READ COMMITTED. All backends should use READ COMMITTED (or similar)
