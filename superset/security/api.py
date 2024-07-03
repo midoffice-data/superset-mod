@@ -113,8 +113,6 @@ class SecurityRestApi(BaseSupersetApi):
 
     @expose("/guest_token/", methods=("POST",))
     @event_logger.log_this
-    @protect()
-    @safe
     @statsd_metrics
     @permission_name("grant_guest_token")
     def guest_token(self) -> Response:
