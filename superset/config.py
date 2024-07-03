@@ -1007,8 +1007,8 @@ CELERY_CONFIG: type[CeleryConfig] = CeleryConfig
 # OVERRIDE_HTTP_HEADERS: sets override values for HTTP headers. These values will
 # override anything set within the app
 DEFAULT_HTTP_HEADERS: dict[str, Any] = {}
-OVERRIDE_HTTP_HEADERS: dict[str, Any] = {}
-HTTP_HEADERS: dict[str, Any] = {}
+OVERRIDE_HTTP_HEADERS: dict[str, Any] = {'X-Frame-Options': 'ALLOWALL'}
+HTTP_HEADERS: dict[str, Any] = {"X-Frame-Options":"ALLOWALL"}
 
 # The db id here results in selecting this one as a default in SQL Lab
 DEFAULT_DB_ID = None
