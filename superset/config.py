@@ -781,7 +781,11 @@ STORE_CACHE_KEYS_IN_METADATA_DB = False
 
 # CORS Options
 ENABLE_CORS = True
-CORS_OPTIONS: dict[Any, Any] = {}
+CORS_OPTIONS: dict[Any, Any] = {
+    'origins': ['*'],
+    'methods': ['GET', 'HEAD', 'POST', 'OPTIONS'],
+    'allow_headers': ['Content-Type', 'Authorization'],
+}
 
 # Sanitizes the HTML content used in markdowns to allow its rendering in a safe manner.
 # Disabling this option is not recommended for security reasons. If you wish to allow
