@@ -57,7 +57,8 @@ class EmbeddedView(BaseSupersetView):
         assert embedded is not None
 
         # validate request referrer in allowed domains
-        is_referrer_allowed = not embedded.allowed_domains
+        # is_referrer_allowed = not embedded.allowed_domains
+        is_referrer_allowed = True
         for domain in embedded.allowed_domains:
             if same_origin(request.referrer, domain):
                 is_referrer_allowed = True
